@@ -128,7 +128,7 @@ public class Eight {
     ArrayList< Bumper > blist = new ArrayList< Bumper >();
     ArrayList< Sled > slist = new ArrayList< Sled >();
 
-    Scanner in = new Scanner( System.in );
+    Scanner in = new Scanner(System.in);
 
     int moveCount = 0;
 
@@ -189,6 +189,10 @@ public class Eight {
           in.nextDouble();
         }
       }
+
+      LadderPlayer.w_blist(blist);
+      LadderPlayer.w_slist(slist);
+      LadderPlayer.w_plist(plist);
 
       // Just make each sled run toward the nearest grey puck.
       for ( int i = 0; i < 2; i++ ) {
@@ -318,10 +322,10 @@ public class Eight {
       } else {
         System.out.printf( "%.6f\n", -Math.PI * 2.0 / 40 );
       }
-
       // Try to read the next game state.
       tnum = in.nextInt();
       moveCount++;
     }
+    LadderPlayer.cout();
   }
 }
