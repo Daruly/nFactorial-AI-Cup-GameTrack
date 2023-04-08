@@ -9,7 +9,7 @@ public class Const {
   
   /** Maximum length of the trail behind a sled */
   public static final double TRAIL_LIMIT = 600;
-  
+
   /** Maximum velocity for a bumper. */
   public static final double BUMPER_SPEED_LIMIT = 24.0;
   
@@ -20,7 +20,7 @@ public class Const {
   public static final double SLED_TURN_LIMIT = 0.5;
 
   /** Per-move speed of the sled. */
-  public static final double SLED_SPEED = 15;
+  public static final double SLED_SPEED = 100;
 
   /** Puck velocity lost per turn */
   public static final double PUCK_FRICTION = 1;
