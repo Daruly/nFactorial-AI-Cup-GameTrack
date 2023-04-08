@@ -20,6 +20,7 @@ public class LadderPlayer {
         Collections.copy(slistLadder,wer);
     }
     public static void cout(){
+        System.out.println("HELLO");
         for(Eight.Puck to: plistLadder){
             System.out.println(to.toString() + "\n");
         }

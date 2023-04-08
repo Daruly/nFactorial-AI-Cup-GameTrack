@@ -123,6 +123,7 @@ public class Eight {
   }
 
   public static void main( String[] arg ) {
+    System.out.println("WHo AM i");
     // List of current sled, bumper and puck locations.
     ArrayList< Puck > plist = new ArrayList< Puck >();
     ArrayList< Bumper > blist = new ArrayList< Bumper >();
@@ -137,7 +138,8 @@ public class Eight {
 
     // How much time the bumper has to pursue the target.
     int[] ttimer = { 0, 0 };
-
+//    LadderPlayer.cout();
+    System.out.println("HELLO");
     // Keep reading states until the game ends.
     int tnum = in.nextInt();
     while ( tnum >= 0 ) {
@@ -193,6 +195,7 @@ public class Eight {
       LadderPlayer.w_blist(blist);
       LadderPlayer.w_slist(slist);
       LadderPlayer.w_plist(plist);
+
 
       // Just make each sled run toward the nearest grey puck.
       for ( int i = 0; i < 2; i++ ) {
@@ -326,6 +329,5 @@ public class Eight {
       tnum = in.nextInt();
       moveCount++;
     }
-    LadderPlayer.cout();
   }
 }
