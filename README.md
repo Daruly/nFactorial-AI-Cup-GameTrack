@@ -3,4 +3,5 @@
 
     < Aidaruly Ali ><br >
     < GustasTu ><br > 
-    Instructions to start your code
+ java -jar capture.jar -player java java_example.LadderPlayer -player java java_example.Eight
+LadderPlayer Class
