@@ -245,13 +245,14 @@ public class LadderPlayer {
                         for ( int j = 0; j < plist.size(); j++ ) {
                             // Pick a grey target that's close to the player and not too close
                             // to the destination.
-                            if ( plist.get( j ).color == Const.RED &&
+                            if ( plist.get( j ).color == Const.RED && target[ i ] < 0)
 //                                        plist.get( j ).pos.distance( tdest ) > 120 &&
 //                                        Math.abs( plist.get( j ).pos.getX() - 400 ) < 340 &&
 //                                        Math.abs( plist.get( j ).pos.getY() - 400 ) < 340 &&
-                                    ( target[ i ] < 0 ||
-                                            plist.get( j ).pos.distance( bumper.pos ) < //<
-                                                    plist.get( target[ i ] ).pos.distance( bumper.pos ) ) )
+
+//                                    ( target[ i ] < 0 ||
+//                                            plist.get( j ).pos.distance( bumper.pos ) < //<
+//                                                    plist.get( target[ i ] ).pos.distance( bumper.pos ) ) )
                                 target[i] = j;
                         }
 
@@ -542,3 +543,4 @@ public class LadderPlayer {
 //java -jar capture.jar -player java java_example.LadderPlayer -player builtin RandomPlayer
 //java -jar capture.jar -player java java_example.LadderPlayer -player java java_example.Eight
 //java -jar capture.jar -player java java_example.LadderPlayer -player builtin RandomPlayer
+//java -jar capture.jar -player java java_example.LadderPlayer -player builtin DoNothingPlayer
