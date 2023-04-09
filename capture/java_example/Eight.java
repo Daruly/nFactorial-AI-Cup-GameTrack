@@ -206,7 +206,7 @@ public class Eight {
           for ( int j = 0; j < plist.size(); j++ ) {
             // Pick a grey target that's close to the player and not too close
             // to the destination.
-            if ( plist.get( j ).color == Const.GREY &&
+            if ( plist.get( j ).color == Const.RED &&
                  plist.get( j ).pos.distance( tdest ) > 120 &&
                  Math.abs( plist.get( j ).pos.getX() - 400 ) < 340 &&
                  Math.abs( plist.get( j ).pos.getY() - 400 ) < 340 &&
