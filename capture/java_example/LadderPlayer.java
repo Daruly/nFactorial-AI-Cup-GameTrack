@@ -142,6 +142,7 @@ public class LadderPlayer {
             int[] ttimer = { 0, 0 };
             // Keep reading states until the game ends.
             int tnum = in.nextInt();
+            double prevx = -1, prevy = -1;
             while ( tnum >= 0 ) {
                 // Read all the pucks
                 int n = in.nextInt();
@@ -205,7 +206,37 @@ public class LadderPlayer {
                     double xxx = slist.get(0).pos.getX();
                     double yyy = slist.get(0).pos.getY();
                     if(i == 0){
-                        Point2D tdest = new Point2D.Double(xx - 10,yy - 10);
+                        double ansx = xx, ansy = yy;
+                        if(prevx - xx > 0 && prevy - yy > 0 && prevx != -1 && prevy != -1){
+                            ansx += 5;
+                            ansy += 5;
+                        }
+                        else if(prevx - xx < 0 && prevy - yy < 0 && prevx != -1 && prevy != -1){
+                            ansx -= 5;
+                            ansy -= 5;
+                        }
+                        else if(prevx - xx < 0 && prevy - yy > 0 && prevx != -1 && prevy != -1){
+                            ansx -= 5;
+                            ansy += 5;
+                        }
+                        else if(prevx - xx > 0 && prevy - yy < 0 && prevx != -1 && prevy != -1){
+                            ansx += 5;
+                            ansy -= 5;
+                        }
+                        else if(prevx - xx < 0 && prevy - yy == 0 && prevx != -1 && prevy != -1){
+                            ansx -= 5;
+                        }
+                        else if(prevx - xx > 0 && prevy - yy == 0 && prevx != -1 && prevy != -1){
+                            ansx += 5;
+                        }
+                        else if(prevx - xx == 0 && prevy - yy > 0 && prevx != -1 && prevy != -1){
+                            ansy -= 5;
+                        }
+                        else if(prevx - xx == 0 && prevy - yy < 0 && prevx != -1 && prevy != -1){
+                            ansy += 5;
+                        }
+
+                        Point2D tdest = new Point2D.Double(ansx,ansy);
                         java_example.Eight.Bumper bumper = blist.get( i );
                         if ( ttimer[ i ] <= 0 ) {
                             // Find a target that's grey and close to the bumper.
@@ -321,9 +352,11 @@ public class LadderPlayer {
                             // Just move to the right.
                             System.out.printf( "%.2f 0.0 ", Const.BUMPER_ACCEL_LIMIT );
                         }
+                        prevx = xx;
+                        prevy = yy;
                     }
                     else{
-                        Point2D tdest = new Point2D.Double( xxx - 10, yyy - 10 );
+                        Point2D tdest = new Point2D.Double( xxx, yyy );
                         java_example.Eight.Bumper bumper = blist.get( i );
                         if ( ttimer[ i ] <= 0 ) {
                             // Find a target that's grey and close to the bumper.
@@ -443,12 +476,17 @@ public class LadderPlayer {
                 }
 
                 // Make the sled drive in a figure eight.
-                if ( moveCount % 80 < 40 ) {
-                    System.out.printf( "%.6f\n", Math.PI * 2.0 / 40 );
-                } else {
-                    System.out.printf( "%.6f\n", -Math.PI * 2.0 / 40);
+                if(moveCount>=0 && moveCount <=20){
+                    System.out.printf( "%.6f\n", -Math.PI * 2.0 / 60 );
                 }
-                // Try to read the next game state.
+
+
+                else {
+                    if ( moveCount % 80 < 40 ) {
+                        System.out.printf( "%.6f\n", +Math.PI * 2.0 / 40 );
+                    } else {
+                        System.out.printf( "%.6f\n",-Math.PI * 2.0 / 40 );
+                    }}
                 tnum = in.nextInt();
                 moveCount++;
             }
