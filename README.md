@@ -1,4 +1,5 @@
-# nFactorial-AI-Cup-GameTrack
+# Запустите код за красных!!!
+
     Basic game structure for nFactorial AI CUP 2023, game track
 
     < Aidaruly Ali ><br >
