@@ -477,7 +477,7 @@ public class LadderPlayer {
 
                 // Make the sled drive in a figure eight.
                 if(moveCount>=0 && moveCount <=20){
-                    System.out.printf( "%.6f\n", -Math.PI * 2.0 / 60 );
+                    System.out.printf( "%.6f\n", -Math.PI * 2.0 / 80 );
                 }
 
 
