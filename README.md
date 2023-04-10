@@ -1,6 +1,6 @@
 # nFactorial AI CUP 2023, game track from ICPC Competition
-    < Aidaruly Ali > <br >
-    < GustasTu > <br > 
+    < Aidaruly Ali > 
+    < GustasTu >
 
 Attack algorithm to Opponent's Sleds.
 Run LadderPlayer first!(i.e for the RED Player)
