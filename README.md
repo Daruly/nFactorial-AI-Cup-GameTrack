@@ -1,9 +1,10 @@
-# Запустите код за красных!!!
+# nFactorial AI CUP 2023, game track from ICPC Competition
+    < Aidaruly Ali > <br >
+    < GustasTu > <br > 
 
-    Basic game structure for nFactorial AI CUP 2023, game track
+Attack algorithm to Opponent's Sleds.
+Run LadderPlayer first!(i.e for the RED Player)
 
-    < Aidaruly Ali ><br >
-    < GustasTu ><br > 
-Просьба Запускать класс LadderPlayer ПЕРВЫМ!(за красный цвет)
- java -jar capture.jar -player java java_example.LadderPlayer -player java java_example.Eight
-LadderPlayer Class
+How to activate:
+./capture/java_example/: javac *.java
+./capture:  java -jar capture.jar -player java java_example.LadderPlayer -player java java_example.Eight
